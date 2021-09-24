@@ -1,0 +1,67 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint", "prettier", "react", "react-hooks", "react-native"],
+    "extends": [
+      "airbnb",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      // 'plugin:@typescript-eslint/recommended-requiring-type-checking', # disabled for now
+      "plugin:prettier/recommended",
+      "prettier",
+      "plugin:react-hooks/recommended",
+      "plugin:react-native/all"
+    ],
+  
+    "globals": {
+      "fetch": false
+    },
+    "parserOptions": {
+      "babelOptions": {
+        "configFile": "./babel.config.js"
+      }
+    },
+  
+    "env": {
+      "react-native/react-native": true,
+      "jest": true
+    },
+  
+    "rules": {
+      "curly": 2,
+      "global-require": 1,
+      "import/prefer-default-export": 0,
+      "no-console": 2,
+      "prettier/prettier": 2,
+  
+      "import/order": [
+        "error",
+        {
+          "pathGroups": [
+            {
+              "pattern": "src/**",
+              "group": "internal",
+              "position": "before"
+            }
+          ],
+          "groups": ["external", "builtin", "internal", "index", "parent", "sibling"],
+          "newlines-between": "always-and-inside-groups",
+          "warnOnUnassignedImports": true
+        }
+      ],
+      "import/no-named-as-default": 0,
+  
+      "react-hooks/rules-of-hooks": 2,
+  
+      "react/no-unescaped-entities": 0,
+      "react/jsx-props-no-spreading": 1,
+      "react/destructuring-assignment": 1,
+      "react/require-default-props": 0,
+  
+      "@typescript-eslint/ban-ts-comment": 1,
+      "@typescript-eslint/no-unused-vars": 2,
+      "@typescript-eslint/explicit-module-boundary-types": 0,
+      "@typescript-eslint/no-explicit-any": 0
+    }
+  }
+  
